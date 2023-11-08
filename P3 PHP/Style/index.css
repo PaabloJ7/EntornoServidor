@@ -1,0 +1,47 @@
+/* Estilo para el título principal */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo para el menú de navegación */
+#menu {
+    background-color: #0077b6;
+    text-align: center;
+    padding: 10px;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#menu ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el contenido principal */
+#contenido {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+}
