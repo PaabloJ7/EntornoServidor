@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexion = conectar();
 
     if (isset($_POST['eliminar_comercial'])) {
-        // Eliminación de datos en la tabla Comerciales
+  
         $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : '';
 
-        // Antes de eliminar el comercial, también eliminamos las ventas asociadas
+
         $eliminarVentas = $conexion->prepare("DELETE FROM Ventas WHERE codComercial = :codigo");
         $eliminarVentas->bindParam(':codigo', $codigo);
         $eliminarVentas->execute();
@@ -20,14 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $eliminarComercial->bindParam(':codigo', $codigo);
         $eliminarComercial->execute();
 
-        // Puedes añadir mensajes de éxito o manejo de errores aquí
     }
 
     if (isset($_POST['eliminar_producto'])) {
-        // Eliminación de datos en la tabla Productos
+
         $referencia = isset($_POST['referencia']) ? $_POST['referencia'] : '';
 
-        // Antes de eliminar el producto, también eliminamos las ventas asociadas
+
         $eliminarVentas = $conexion->prepare("DELETE FROM Ventas WHERE refProducto = :referencia");
         $eliminarVentas->bindParam(':referencia', $referencia);
         $eliminarVentas->execute();
@@ -36,11 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $eliminarProducto->bindParam(':referencia', $referencia);
         $eliminarProducto->execute();
 
-        // Puedes añadir mensajes de éxito o manejo de errores aquí
+
     }
 
     if (isset($_POST['eliminar_venta'])) {
-        // Eliminación de datos en la tabla Ventas
+
         $codComercial = isset($_POST['codComercial']) ? $_POST['codComercial'] : '';
         $refProducto = isset($_POST['refProducto']) ? $_POST['refProducto'] : '';
         $fechaVenta = isset($_POST['fechaVenta']) ? $_POST['fechaVenta'] : '';
@@ -55,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $eliminarVenta->bindParam(':fechaVenta', $fechaVenta);
         $eliminarVenta->execute();
 
-        // Puedes añadir mensajes de éxito o manejo de errores aquí
+
     }
 }
 ?>
@@ -83,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" name="eliminar_comercial">Eliminar Comercial</button>
     </form>
 
-    <!-- Después del formulario de eliminación de comerciales -->
 
     <h2>Eliminar Productos</h2>
     <form method="post" action="">
@@ -98,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" name="eliminar_producto">Eliminar Producto</button>
     </form>
 
-    <!-- Ahora, agrega el formulario de eliminación de ventas -->
+
 
     <h2>Eliminar Ventas</h2>
     <form method="post" action="">

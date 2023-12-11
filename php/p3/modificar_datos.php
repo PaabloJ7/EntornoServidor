@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexion = conectar();
 
     if (isset($_POST['modificar_comercial'])) {
-        // Modificación de datos en la tabla Comerciales
+
         $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : '';
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
         $salario = isset($_POST['salario']) ? $_POST['salario'] : 0;
@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $modificarComercial->execute();
 
-        // Puedes añadir mensajes de éxito o manejo de errores aquí
+
     }
       if (isset($_POST['modificar_producto'])) {
-        // Modificación de datos en la tabla Productos
+      
         $referencia = $_POST['referencia'];
         $nombreProducto = $_POST['nombreProducto'];
         $descripcion = $_POST['descripcion'];
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $modificarProducto->execute();
 }
 if (isset($_POST['modificar_venta'])) {
-    // Modificación de datos en la tabla Ventas
+  
     $codComercial = $_POST['codComercial'];
     $refProducto = $_POST['refProducto'];
     $cantidad = $_POST['cantidad'];
@@ -115,7 +115,6 @@ if (isset($_POST['modificar_venta'])) {
         <button type="submit" name="modificar_comercial">Modificar Comercial</button>
     </form>
 
-<!-- Después del formulario de modificación de comerciales -->
 
 <h2>Modificar Productos</h2>
 <form method="post" action="">
@@ -146,7 +145,7 @@ if (isset($_POST['modificar_venta'])) {
     <button type="submit" name="modificar_producto">Modificar Producto</button>
 </form>
 
-<!-- Ahora, agrega el formulario de modificación de ventas -->
+
 
 <h2>Modificar Ventas</h2>
 <form method="post" action="">

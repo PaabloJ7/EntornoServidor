@@ -8,16 +8,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexion = conectar();
 
     if (isset($_POST['insertar_comercial'])) {
-        // Inserción de datos en la tabla Comerciales
+
         $codigo = isset($_POST['codigo']) ? $_POST['codigo'] : '';
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
         $salario = isset($_POST['salario']) ? $_POST['salario'] : 0;
         $hijos = isset($_POST['hijos']) ? $_POST['hijos'] : 0;
         $fechaNacimiento = isset($_POST['fechaNacimiento']) ? $_POST['fechaNacimiento'] : '';
 
-        // Validación de campos obligatorios
+
         if (empty($codigo) || empty($nombre)) {
-            // Manejar el error, redirigir o mostrar un mensaje al usuario
+
             echo "El código y el nombre no pueden estar vacíos.";
         } else {
             $insertarComercial = $conexion->prepare(
@@ -33,21 +33,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $insertarComercial->execute();
 
-            // Puedes añadir mensajes de éxito o manejo de errores aquí
+
         }
     }
 
     if (isset($_POST['insertar_producto'])) {
-        // Inserción de datos en la tabla Productos
+
         $referencia = isset($_POST['referencia']) ? $_POST['referencia'] : '';
         $nombreProducto = isset($_POST['nombreProducto']) ? $_POST['nombreProducto'] : '';
         $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : '';
         $precio = isset($_POST['precio']) ? $_POST['precio'] : 0;
         $descuento = isset($_POST['descuento']) ? $_POST['descuento'] : 0;
 
-        // Validación de campos obligatorios
+
         if (empty($referencia) || empty($nombreProducto)) {
-            // Manejar el error, redirigir o mostrar un mensaje al usuario
+
             echo "La referencia y el nombre del producto no pueden estar vacíos.";
         } else {
             $insertarProducto = $conexion->prepare(
@@ -63,20 +63,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $insertarProducto->execute();
 
-            // Puedes añadir mensajes de éxito o manejo de errores aquí
+
         }
     }
 
     if (isset($_POST['insertar_venta'])) {
-        // Inserción de datos en la tabla Ventas
+
         $codComercial = isset($_POST['codComercial']) ? $_POST['codComercial'] : '';
         $refProducto = isset($_POST['refProducto']) ? $_POST['refProducto'] : '';
         $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 0;
         $fechaVenta = isset($_POST['fechaVenta']) ? $_POST['fechaVenta'] : '';
 
-        // Validación de campos obligatorios
+
         if (empty($codComercial) || empty($refProducto)) {
-            // Manejar el error, redirigir o mostrar un mensaje al usuario
+
             echo "El código del comercial y la referencia del producto no pueden estar vacíos.";
         } else {
             $insertarVenta = $conexion->prepare(
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $insertarVenta->execute();
 
-            // Puedes añadir mensajes de éxito o manejo de errores aquí
+
         }
     }
 }
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <h2>Inserción de Productos</h2>
     <form method="post" action="">
-        <!-- Agrega aquí campos para la inserción de productos -->
+    
         <label for="referencia">Referencia:</label>
         <input type="text" name="referencia" required>
         <br>
@@ -160,7 +160,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <h2>Inserción de Ventas</h2>
     <form method="post" action="">
-        <!-- Agrega aquí campos para la inserción de ventas -->
+  
         <label for="codComercial">Código del Comercial:</label>
         <input type="text" name="codComercial" required>
         <br>
