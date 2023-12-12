@@ -1,0 +1,1 @@
+Para que funciones la pagina debes crear el usuario llamado "usu4" en phpmyadmin
