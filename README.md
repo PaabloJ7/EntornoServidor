@@ -1,2 +1,2 @@
 # Entorno Servidor
-Asignatura de Desarollo web en entorno servidor de 2º DAW
+Ejercicios y mini proyectos con PHP en 2º DAW
